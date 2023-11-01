@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <script src="./d3.v3.min.js"></script>
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘋果成績表v3</title>
+    <script src="../d3.v3.min.js"></script>
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap'); */
-
         @font-face {
-            font-family:'CircleFont'; /* src: url(https://circle472.github.io/ct2022s/hw04/CircleFont.ttf);  https://github.com/circle472/ct2022s/ */
-            src: url(CircleFont_v2.woff2); /* https://cloudconvert.com/ttf-to-woff2 */
+            font-family:'CircleFont'; 
+            src: url(CircleFont_v2.woff2);
         }
 
         h3 {
@@ -55,8 +53,7 @@
             margin-bottom: 10px;
         }
 
-        td,
-        th {
+        td,th {
             border: 1px black solid;
             padding: 5px;
             background-color: rgba(128, 255, 255, 0.1);
@@ -79,24 +76,6 @@
         img:hover {
             box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
         }
-
-        /*
-        .excellent-kid {
-            background-color: skyblue;
-        }
-
-        .good-kid {
-            background-color: pink;
-        }
-
-        .fair-kid {
-            background-color: pink;
-        }
-
-        .poor-kid {
-            background-color: pink;
-        }
-        */
 
         td:hover img {
             transition: width, height;
@@ -149,13 +128,9 @@
 
 <body>
     <h3>Data Visualization 成績</h3>
-
     <div id="div1"></div>
-
     <div id="div2"></div>
-
     <script type="text/javascript" charset="utf-8">
-
         d3.select("#div1")
             .append("table")
             .append("tr")
@@ -176,25 +151,25 @@
                 else return "poor-kid";})
             .append("img")
             .attr("src", function (d, i) { 
-                if (d == 10) return "./svg10/52.svg";
-                else if (d == 9) return "./svg10/51.svg";
-                else if (d == 8) return "./svg10/42.svg";
-                else if (d == 7) return "./svg10/41.svg";
-                else if (d == 6) return "./svg10/32.svg";
-                else if (d == 5) return "./svg10/31.svg";
-                else if (d == 4) return "./svg10/22.svg";
-                else if (d == 3) return "./svg10/21.svg";
-                else if (d == 2) return "./svg10/12.svg";
-                else if (d == 1) return "./svg10/11.svg";
-                else if (d == 0) return "./svg10/01.svg";
-                else return "./svg10/00.svg"; })
+                if (d == 10) return "../svg/52.svg";
+                else if (d == 9) return "../svg/51.svg";
+                else if (d == 8) return "../svg/42.svg";
+                else if (d == 7) return "../svg/41.svg";
+                else if (d == 6) return "../svg/32.svg";
+                else if (d == 5) return "../svg/31.svg";
+                else if (d == 4) return "../svg/22.svg";
+                else if (d == 3) return "../svg/21.svg";
+                else if (d == 2) return "../svg/12.svg";
+                else if (d == 1) return "../svg/11.svg";
+                else if (d == 0) return "../svg/01.svg";
+                else return "../svg/00.svg"; })
             .attr("x", "0")
             .attr("y", "0")
             .attr("width",  function(d, i) { return (i + 1) * 60; })
             .attr("height", function(d, i) { return (i + 1) * 60; });
 
 
-    d3.text("./csv/data.csv", function (data) {
+    d3.text("../data.csv", function (data) {
 
         //var parsedCSV = d3.csv.parseRows(data);
         parsedCSV = d3.csv.parseRows(data);
@@ -211,7 +186,12 @@
             .append("td")
             .html(function (d, i) {
                 if ( i == 4 && d != 'GitHub 帳號' ) {
-                    return '<a href="https://' + d + '.github.io/vis2023f/" target="_blank"><img src="https://' + d + '.github.io/vis2023f/hw00/me.jpg"></a>' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
+                    //隨機產生圖片：https://www.ugm.com.tw/modules/tad_book3/html.php?tbdsn=877
+                    const timestamp = Date.now();
+                    const imageSource = 'https://picsum.photos/200/300/?random&' + timestamp;
+        
+                    return '<img src="' + imageSource + '">' +
+                        '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
                 }
                 else if ( i == 0 || i == 2 || isNaN(d)) {
                     return d;
@@ -225,30 +205,18 @@
                 else return "poor-kid";})
             .append("img")
             .attr("src", function (d, i) {
-                if (d == 10) 
-                    return "./svg10/52.svg";
-                else if (d == 9) 
-                    return "./svg10/51.svg";
-                else if (d == 8) 
-                    return "./svg10/42.svg";
-                else if (d == 7) 
-                    return "./svg10/41.svg";
-                else if (d == 6) 
-                    return "./svg10/32.svg";
-                else if (d == 5) 
-                    return "./svg10/31.svg";
-                else if (d == 4) 
-                    return "./svg10/22.svg";
-                else if (d == 3) 
-                    return "./svg10/21.svg";
-                else if (d == 2) 
-                    return "./svg10/12.svg";
-                else if (d == 1) 
-                    return "./svg10/11.svg";
-                else if (d == 0) 
-                    return "./svg10/01.svg";
-                else 
-                    return "./svg10/00.svg";
+                if (d == 10)  return "../svg/52.svg";
+                else if (d == 9)  return "../svg/51.svg";
+                else if (d == 8)  return "../svg/42.svg";
+                else if (d == 7)  return "../svg/41.svg";
+                else if (d == 6)  return "../svg/32.svg";
+                else if (d == 5)  return "../svg/31.svg";
+                else if (d == 4)  return "../svg/22.svg";
+                else if (d == 3)  return "../svg/21.svg";
+                else if (d == 2)  return "../svg/12.svg";
+                else if (d == 1)  return "../svg/11.svg";
+                else if (d == 0)  return "../svg/01.svg";
+                else  return "../svg/00.svg";
             })
             .attr("width", 50)
             .attr("height", 50)
