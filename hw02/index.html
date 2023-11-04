@@ -243,19 +243,19 @@
 
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
-          <td id='m4 ' >2</td>
+          <td id='m4'>2</td>
           <td>Medium baseline-2 - 可調整margin, fill color, tip </td>
         </tr>
         
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked"></td>
-          <td id='m5 ' >1</td>
+          <td id='m5'>1</td>
           <td>Strong baseline-1 - 以bar chart呈現每個星座的人數 </td>
         </tr>
 
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked"></td>
-          <td id='m6' >1</td>
+          <td id='m6'>1</td>
           <td>Strong baseline-2 - 以histogram呈現每個星座的人數 </td>
         </tr>
 
@@ -321,8 +321,6 @@
     if (d3.select("#myCheckbox6").property("checked")){
       score += parseInt(d3.select('#m6').html());   
     }
-
-  
 
     d3.select("#myTotal").html(score);    
   }
