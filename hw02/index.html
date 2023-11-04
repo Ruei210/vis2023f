@@ -311,16 +311,17 @@
     }
 
     if (d3.select("#myCheckbox4").property("checked")){
-      score += parseInt(d3.select('#m4').html());   
+      score += parseInt(d3.select('#m4').html());
     }
-    
+
     if (d3.select("#myCheckbox5").property("checked")){
       score += parseInt(d3.select('#m5').html());   
     }
-    
+
     if (d3.select("#myCheckbox6").property("checked")){
       score += parseInt(d3.select('#m6').html());   
     }
+
   
 
     d3.select("#myTotal").html(score);    
