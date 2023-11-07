@@ -1,0 +1,14 @@
+{
+  "name": "9a288a6521f1a882",
+  "main": "9a288a6521f1a882@171.js",
+  "version": "171.0.0",
+  "homepage": "https://observablehq.com/d/9a288a6521f1a882",
+  "author": {
+    "name": "Ruei's Workspace",
+    "url": "https://observablehq.com/@ruei-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
