@@ -279,9 +279,7 @@
 
   <!-- ------------------------------------------------>
 
-
-<script>
-  $(function() {
+ $(function() {
     var f = function() {
       $(this).next().text($(this).is(':checked') ? '做完' : '未做完');
     };
@@ -313,20 +311,17 @@
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
     }
+
     if (d3.select("#myCheckbox4").property("checked")){
       score += parseInt(d3.select('#m4').html());   
     }
 
     if (d3.select("#myCheckbox5").property("checked")){
-      score += parseInt(d3.select('#m5').html());
+      score += parseInt(d3.select('#m5').html());   
     }
 
     if (d3.select("#myCheckbox6").property("checked")){
       score += parseInt(d3.select('#m6').html());   
-    }
-
-    if (d3.select("#myCheckbox7").property("checked")){
-      score += parseInt(d3.select('#m7').html());   
     }
 
     d3.select("#myTotal").html(score);    
