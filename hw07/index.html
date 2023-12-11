@@ -206,19 +206,35 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline - 將Unitypackage放入Unity中</td>
         </tr>
+        
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>1</td>
+          <td>Simple baseline - 透過Vroid製作人物用來代表場景中的角色</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>1</td>
+          <td>Medium baseline - 在Unity場景(師大美術館)上顯示出自己的移動路徑 </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>2</td>
+          <td>Medium baseline - 將組員(8人)的移動路徑在Unity場景(師大美術館)上顯示 </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked></td>
+          <td id='m5'>2</td>
+          <td>Medium baseline - 每個人物模型上顯示出組員的學號 </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked></td>
+          <td id='m6'>2</td>
+          <td>Strong baseline - 熱力圖、泡泡圖、有向圖 </td>
         </tr>
       </table>
     </div>
@@ -228,7 +244,14 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="./src/Demo_hw07.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <video id="video1" style="width:100%;max-width:100%;" controls="">
+        <source src="./src/Demo_hw07_StrongBaseLine.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -236,7 +259,6 @@
   <!-- ------------------------------------------------>
 
   <!-- ------------------------------------------------>
-
 
 <script>
   $(function() {
@@ -252,7 +274,6 @@
   d3.select("#myCheckbox4").on("change",update);
   d3.select("#myCheckbox5").on("change",update);
   d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -270,6 +291,15 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
+    }
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
     }
 
     d3.select("#myTotal").html(score);    
